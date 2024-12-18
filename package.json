@@ -3,7 +3,8 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"repository": {
-		"url": "https://github.com/KnoblauchPilze/frontend-toolkit"
+		"type": "git",
+		"url": "git+https://github.com/Knoblauchpilze/frontend-toolkit.git"
 	},
 	"scripts": {
 		"dev": "vite dev",

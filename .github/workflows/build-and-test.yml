@@ -2,6 +2,9 @@ name: Build and test package
 
 on:
   push:
+    # https://stackoverflow.com/questions/68573888/how-can-i-not-execute-a-github-action-when-i-push-a-new-tag
+    branches:
+      - '**'
     paths:
       - 'package.json'
       - 'package-lock.json'

@@ -1,58 +1,39 @@
-# create-svelte
+# frontend-toolkit
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+# Why this package?
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+This package aims at providing building blocks that help to kickstart a svelte-kit project able to interact with the backend services developed with [backend-toolkit](https://github.com/KnoblauchPilze/backend-toolkit).
 
-## Creating a project
+It also defines convenience components allowing to style the various websites in a consistent way.
 
-If you're seeing this, you've probably already done this step. Congrats!
+TODO: Create a template project for the frontend service.
 
-```bash
-# create a new project in the current directory
-npx sv create
+# What is the content of this repository?
 
-# create a new project in my-app
-npx sv create my-app
+Taken from the svelte documentation:
+
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
 Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+```
 
-## Building
+# How to get started?
 
-To build your library:
+To build the library:
 
 ```bash
 npm run package
 ```
 
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
+To publish the package, you can run:
 
 ```bash
 npm publish
 ```
+
+# Useful resources
+
+While building this package, some resources were instrumental to understand what needs to be done and how. In particular:
+
+- the [svelte documentation](https://svelte.dev/docs/kit/packaging) about packaging and specifically the introduction to get started with how to create the project.
+- this [freecodecamp](https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/) tutorial on how to publish an `npm` package: it does not apply 100% to svelte but gives a good overview.
+- this [youtube video](https://www.youtube.com/watch?v=_TymiadmPrc) by `Syntax` which showcases how to publish a svelte package precisely.

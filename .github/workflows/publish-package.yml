@@ -26,7 +26,7 @@ jobs:
         run: |
           PACKAGE_VERSION=$(echo ${{ github.ref_name }} | tr -d v)
           echo "$PACKAGE_VERSION"
-          sed -Ei 's/"version":[ ]+"[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?/"version":"'${PACKAGE_VERSION}'"/g' package.json
+          sed -Ei 's/"version":[ ]+"[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?"/"version":"'${PACKAGE_VERSION}'"/g' package.json
           echo $(cat package.json)
       - name: Publish package
         run: npm publish --provenance --access public

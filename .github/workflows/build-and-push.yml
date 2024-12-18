@@ -6,9 +6,7 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/**'
-      - 'build/**'
-      - 'src/**'
-      - 'static/**'
+      - 'src/lib/**'
       - '*.js'
       - '*config*'
 
@@ -21,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install modules
+        run: |
+          npm install
       - name: Build package
         run: |
           npm run build

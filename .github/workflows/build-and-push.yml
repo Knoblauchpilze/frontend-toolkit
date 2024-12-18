@@ -1,0 +1,26 @@
+name: Build and test package
+
+on:
+  push:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+      - 'build/**'
+      - 'src/**'
+      - 'static/**'
+      - '*.js'
+      - '*config*'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build package
+        run: |
+          npm run build

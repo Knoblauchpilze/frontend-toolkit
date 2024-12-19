@@ -8,6 +8,12 @@ It also defines convenience components allowing to style the various websites in
 
 TODO: Create a template project for the frontend service.
 
+# Badges
+
+[![Build and test package](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml)
+
+[![Publish package to npmjs](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/publish-package.yml/badge.svg)](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/publish-package.yml)
+
 # What is the content of this repository?
 
 Taken from the svelte documentation:

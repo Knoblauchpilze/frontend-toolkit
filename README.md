@@ -19,7 +19,7 @@ TODO: Create a template project for the frontend service.
 Taken from the svelte documentation:
 
 ```
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+Everything inside src/lib is part of your library, everything inside src/routes can be used as a showcase or preview app.
 ```
 
 # How to get started?

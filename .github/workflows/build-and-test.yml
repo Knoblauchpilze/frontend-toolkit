@@ -31,6 +31,7 @@ jobs:
         id: lint
         run: |
           npm run lint
+        continue-on-error: true
       # https://stackoverflow.com/questions/57850553/github-actions-check-steps-status
       - name: Fix lint errors
         if: job.steps.lint.status == failure()

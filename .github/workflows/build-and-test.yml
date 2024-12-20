@@ -26,8 +26,20 @@ jobs:
         run: |
           npm ci
       - name: Run linter
+        id: lint
         run: |
           npm run lint
+      # https://stackoverflow.com/questions/57850553/github-actions-check-steps-status
+      - name: Fix lint errors
+        if: job.steps.lint.status == failure()
+        permissions:
+          contents: write
+        run: |
+          npm run format
+          git config --global user.name 'totocorpbot'
+          git config --global user.email 'totocorpbot@users.noreply.github.com'
+          git commit -am "chore: Automatic code style fix"
+          git push
       - name: Build package
         run: |
           npm run build

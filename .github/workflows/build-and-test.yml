@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build-package:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Install modules
@@ -32,8 +34,6 @@ jobs:
       # https://stackoverflow.com/questions/57850553/github-actions-check-steps-status
       - name: Fix lint errors
         if: job.steps.lint.status == failure()
-        permissions:
-          contents: write
         run: |
           npm run format
           git config --global user.name 'totocorpbot'

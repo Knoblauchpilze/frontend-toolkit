@@ -7,7 +7,7 @@
 		"url": "git+https://github.com/Knoblauchpilze/frontend-toolkit.git"
 	},
 	"scripts": {
-		"dev": "vite dev",
+		"dev":      "vite dev",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",

@@ -15,9 +15,9 @@
 </script>
 
 {#if enabled}
-	<button class="px-8 py-2 rounded-[8px] {bgColor} {bgColorHover} text-white">{text}</button>
+	<button class="rounded-[8px] px-8 py-2 {bgColor} {bgColorHover} text-white">{text}</button>
 {:else}
-	<button class="px-8 py-2 rounded-[8px] {bgColor} {bgColorHover} text-white" disabled
+	<button class="rounded-[8px] px-8 py-2 {bgColor} {bgColorHover} text-white" disabled
 		>{text}</button
 	>
 {/if}

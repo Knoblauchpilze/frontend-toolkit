@@ -7,6 +7,7 @@ dev:
 
 build:
 	npm run build
+	npm run postbuild
 
 lint:
 	npx prettier . --write

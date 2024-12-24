@@ -12,7 +12,13 @@
 		children?: Snippet;
 	}
 
-	let { width = 'w-3/4', height = 'h-3/4', bgColor = 'bg-primary', bgOverlay = 'bg-overlay', children }: Props = $props();
+	let {
+		width = 'w-3/4',
+		height = 'h-3/4',
+		bgColor = 'bg-primary',
+		bgOverlay = 'bg-overlay',
+		children
+	}: Props = $props();
 
 	let style = $derived(
 		'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ' +

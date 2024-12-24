@@ -5,13 +5,14 @@
 	import { FlexContainer } from '$lib/index.js';
 
 	interface Props {
-		bgColor?: string;
 		width?: string;
 		height?: string;
+		bgColor?: string;
+		bgOverlay?: string;
 		children?: Snippet;
 	}
 
-	let { bgColor = 'bg-overlay', width = 'w-3/4', height = 'h-3/4', children }: Props = $props();
+	let { width = 'w-3/4', height = 'h-3/4', bgColor = 'bg-primary', bgOverlay = 'bg-overlay', children }: Props = $props();
 
 	let style = $derived(
 		'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ' +
@@ -22,8 +23,8 @@
 	);
 </script>
 
-<div class="relative h-full bg-primary bg-cover bg-center bg-no-repeat">
-	<FlexContainer {bgColor} styling={style}>
+<div class="relative h-full {bgColor} bg-cover bg-center bg-no-repeat">
+	<FlexContainer bgColor={bgOverlay} styling={style}>
 		{@render children?.()}
 	</FlexContainer>
 </div>

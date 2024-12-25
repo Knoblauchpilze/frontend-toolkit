@@ -6,16 +6,14 @@
 	interface Props {
 		label?: string;
 		labelId: string;
-		styling?: string;
+		labelStyling?: string;
 		children?: Snippet;
 	}
 
-	let { label = 'My label', labelId, styling = 'text-primary', children }: Props = $props();
+	let { label = 'My label', labelId, labelStyling = 'text-primary', children }: Props = $props();
 </script>
 
-<FlexContainer extensible={false} align={'stretch'} {styling}>
-	<label for={labelId}>{label}</label>
-	<div class="text-primary">
-		{@render children?.()}
-	</div>
+<FlexContainer extensible={false} align={'stretch'} styling={'text-primary'}>
+	<label for={labelId} class={labelStyling}>{label}</label>
+	{@render children?.()}
 </FlexContainer>

@@ -5,6 +5,9 @@ setup:
 dev:
 	npm run dev -- --open
 
+test:
+	npm run test
+
 build:
 	npm run build
 

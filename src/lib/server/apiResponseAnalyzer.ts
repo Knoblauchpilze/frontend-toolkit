@@ -51,7 +51,7 @@ export function tryGetFailureReason(apiResponse: ApiResponse): ApiFailure {
 		return tryGetFailureReasonFromError(error);
 	}
 
-  return tryGetFailureFromHttpCode(apiResponse);
+	return tryGetFailureFromHttpCode(apiResponse);
 }
 
 function tryGetFailureReasonFromString(errorDetails: string): ApiFailure {
@@ -99,13 +99,13 @@ function tryGetFailureReasonFromError(error: ErrorWithCode): ApiFailure {
 }
 
 function tryGetFailureFromHttpCode(response: ApiResponse): ApiFailure {
-  if (response.is2xxOk()) {
-    return ApiFailure.NONE;
-  }
+	if (response.is2xxOk()) {
+		return ApiFailure.NONE;
+	}
 
-  if (response.is4xxBadRequest()) {
-    return ApiFailure.BAD_REQUEST;
-  }
+	if (response.is4xxBadRequest()) {
+		return ApiFailure.BAD_REQUEST;
+	}
 
-  return ApiFailure.UNKNOWN_ERROR;
+	return ApiFailure.UNKNOWN_ERROR;
 }

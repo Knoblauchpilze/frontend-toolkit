@@ -9,6 +9,26 @@ import {
 const SAMPLE_REQUEST_ID = 'e0bcdaa7-9e60-411b-a308-75e0c079abed';
 
 describe('Creating an ApiResponse', () => {
+	it('should use the provided request identifier', () => {
+		const actual = new ApiResponse({
+			requestId: SAMPLE_REQUEST_ID,
+			status: 'SUCCESS',
+			details: {}
+		});
+
+		expect(actual.getRequestId()).toBe(SAMPLE_REQUEST_ID);
+	});
+
+	it('should not expect request identifier to be a uuid', () => {
+		const actual = new ApiResponse({
+			requestId: 'my-custom-identifier',
+			status: 'SUCCESS',
+			details: {}
+		});
+
+		expect(actual.getRequestId()).toBe('my-custom-identifier');
+	});
+
 	it('should recognize SUCCESS status', () => {
 		const actual = new ApiResponse({
 			requestId: SAMPLE_REQUEST_ID,

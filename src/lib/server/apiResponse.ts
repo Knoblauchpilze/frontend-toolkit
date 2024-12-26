@@ -5,14 +5,18 @@ export enum Status {
 }
 
 export class ApiResponse {
-	readonly requestId: string;
-	readonly status: Status;
-	readonly details: object;
+	private readonly requestId: string;
+	private readonly status: Status;
+	private readonly details: object;
 
 	constructor(response: { requestId: string; status: string; details: object }) {
 		this.requestId = response.requestId;
 		this.status = (response.status === "SUCCESS" ? Status.SUCCESS : Status.ERROR);
 		this.details = response.details;
+	}
+
+	public getRequestId(): string {
+		return this.requestId;
 	}
 
 	public getStatus(): Status {

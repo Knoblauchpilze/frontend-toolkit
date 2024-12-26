@@ -1,4 +1,3 @@
-
 export enum Status {
 	SUCCESS,
 	ERROR
@@ -11,7 +10,7 @@ export class ApiResponse {
 
 	constructor(response: { requestId: string; status: string; details: object }) {
 		this.requestId = response.requestId;
-		this.status = (response.status === "SUCCESS" ? Status.SUCCESS : Status.ERROR);
+		this.status = response.status === 'SUCCESS' ? Status.SUCCESS : Status.ERROR;
 		this.details = response.details;
 	}
 

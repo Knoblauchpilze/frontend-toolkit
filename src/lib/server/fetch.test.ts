@@ -29,12 +29,12 @@ describe('Trimming last trailing slash', () => {
 describe('Safe fetch JSON', () => {
 	it('should make a request to provided URL', () => {
 		// https://www.wheresrhys.co.uk/fetch-mock/docs#examples
-		fetchMock.mockGlobal().route('http://example.com/route', HttpStatus.OK);
+		fetchMock.mockGlobal().route('http://example.com/route/1', HttpStatus.OK);
 
-		safeFetchJson('http://example.com/route');
+		safeFetchJson('http://example.com/route/1');
 
 		// http://www.wheresrhys.co.uk/fetch-mock/docs/API/CallHistory#calledfilter-options
-		expect(fetchMock.callHistory.called('http://example.com/route')).toBe(true);
+		expect(fetchMock.callHistory.called('http://example.com/route/1')).toBe(true);
 	});
 
 	// https://stackblitz.com/edit/vitest-dev-vitest-wsycmj?file=test%2Fasync.test.ts
@@ -47,9 +47,9 @@ describe('Safe fetch JSON', () => {
 			},
 			status: HttpStatus.OK
 		};
-		fetchMock.mockGlobal().route('http://example.com/route', mockedResponse);
+		fetchMock.mockGlobal().route('http://example.com/route/2', mockedResponse);
 
-		const actual = await safeFetchJson('http://example.com/route');
+		const actual = await safeFetchJson('http://example.com/route/2');
 
 		expect(actual.is2xxOk()).toBe(true);
 		expect(actual.isSuccess()).toBe(true);
@@ -61,9 +61,9 @@ describe('Safe fetch JSON', () => {
 		const mockedResponse = () => {
 			return Promise.reject(new TypeError('sample-failure'));
 		};
-		fetchMock.mockGlobal().route('http://example.com/route', mockedResponse);
+		fetchMock.mockGlobal().route('http://example.com/route/3', mockedResponse);
 
-		const actual = await safeFetchJson('http://example.com/route');
+		const actual = await safeFetchJson('http://example.com/route/3');
 
 		expect(actual.is5xxError()).toBe(true);
 		expect(actual.isError()).toBe(true);
@@ -74,9 +74,9 @@ describe('Safe fetch JSON', () => {
 		const mockedResponse = () => {
 			return Promise.reject('sample-failure');
 		};
-		fetchMock.mockGlobal().route('http://example.com/route', mockedResponse);
+		fetchMock.mockGlobal().route('http://example.com/route/4', mockedResponse);
 
-		const actual = await safeFetchJson('http://example.com/route');
+		const actual = await safeFetchJson('http://example.com/route/4');
 
 		expect(actual.is5xxError()).toBe(true);
 		expect(actual.isError()).toBe(true);
@@ -95,9 +95,9 @@ describe('Safe fetch JSON', () => {
 			},
 			status: HttpStatus.BAD_REQUEST
 		};
-		fetchMock.mockGlobal().route('http://example.com/route', mockedResponse);
+		fetchMock.mockGlobal().route('http://example.com/route/5', mockedResponse);
 
-		const actual = await safeFetchJson('http://example.com/route');
+		const actual = await safeFetchJson('http://example.com/route/5');
 
 		expect(actual.is4xxBadRequest()).toBe(true);
 		expect(actual.isError()).toBe(true);
@@ -108,9 +108,9 @@ describe('Safe fetch JSON', () => {
 	});
 
 	it('should not return any data when HTTP status is 204 no content', async () => {
-		fetchMock.mockGlobal().route('http://example.com/route', HttpStatus.NO_CONTENT);
+		fetchMock.mockGlobal().route('http://example.com/route/6', HttpStatus.NO_CONTENT);
 
-		const actual = await safeFetchJson('http://example.com/route');
+		const actual = await safeFetchJson('http://example.com/route/6');
 
 		expect(actual.is2xxOk()).toBe(true);
 		expect(actual.isSuccess()).toBe(true);

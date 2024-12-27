@@ -106,4 +106,14 @@ describe('Safe fetch JSON', () => {
 			Message: 'my failure message'
 		});
 	});
+
+	it('should not return any data when HTTP status is 204 no content', async () => {
+		fetchMock.mockGlobal().route('http://example.com/route', HttpStatus.NO_CONTENT);
+
+		const actual = await safeFetchJson('http://example.com/route');
+
+		expect(actual.is2xxOk()).toBe(true);
+		expect(actual.isSuccess()).toBe(true);
+		expect(actual.getDetails()).toEqual({});
+	});
 });

@@ -1,4 +1,8 @@
-import { ApiResponse, createFailedApiResponse } from './apiResponse.js';
+import {
+	ApiResponse,
+	createEmptySuccessApiResponse,
+	createFailedApiResponse
+} from './apiResponse.js';
 import { HttpStatus } from './httpStatusCode.js';
 
 export function trimTrailingSlash(url: string): string {
@@ -22,6 +26,10 @@ function buildApiResponseFromFailedHttpRequest(error: object): ApiResponse {
 }
 
 async function buildApiResponseFromHttpRequest(httpResponse: Response): Promise<ApiResponse> {
+	if (httpResponse.status == HttpStatus.NO_CONTENT) {
+		return createEmptySuccessApiResponse(httpResponse.status);
+	}
+
 	const body = await httpResponse.json();
 	return new ApiResponse(body, httpResponse.status);
 }

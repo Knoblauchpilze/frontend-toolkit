@@ -10,9 +10,11 @@ TODO: Create a template project for the frontend service.
 
 # Badges
 
-[![Build and test package](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml)
-
 [![Publish package to npmjs](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/publish-package.yml/badge.svg)](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/publish-package.yml)
+
+[![codecov](https://codecov.io/gh/Knoblauchpilze/frontend-toolkit/graph/badge.svg?token=EJ5G5FKOZ5)](https://codecov.io/gh/Knoblauchpilze/frontend-toolkit)
+
+[![Build and test package](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Knoblauchpilze/frontend-toolkit/actions/workflows/build-and-test.yml)
 
 # What is the content of this repository?
 

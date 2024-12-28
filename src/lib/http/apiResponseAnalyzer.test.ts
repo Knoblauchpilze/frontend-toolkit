@@ -209,4 +209,18 @@ describe('Getting failure reason', () => {
 		const actual = tryGetFailureReason(apiResponse);
 		expect(actual).toBe(ApiFailure.BAD_REQUEST);
 	});
+
+	it('should recognize fetch failure', () => {
+		const apiResponse = new ApiResponse(
+			{
+				requestId: SAMPLE_REQUEST_ID,
+				status: 'ERROR',
+				details: 'fetch failed' as unknown as object
+			},
+			HttpStatus.FORBIDDEN
+		);
+
+		const actual = tryGetFailureReason(apiResponse);
+		expect(actual).toBe(ApiFailure.SERVICE_UNAVAILAVLE);
+	});
 });

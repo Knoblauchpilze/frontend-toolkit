@@ -168,6 +168,20 @@ describe('Getting failure reason', () => {
 		expect(actual).toBe(ApiFailure.INVALID_REGISTRATION_DATA);
 	});
 
+	it('should recognize duplicated email', () => {
+		const apiResponse = new ApiResponse(
+			{
+				requestId: SAMPLE_REQUEST_ID,
+				status: 'ERROR',
+				details: 'Email already in use' as unknown as object
+			},
+			HttpStatus.BAD_REQUEST
+		);
+
+		const actual = tryGetFailureReason(apiResponse);
+		expect(actual).toBe(ApiFailure.INVALID_REGISTRATION_DATA);
+	});
+
 	it('should recognize HTTP 200', () => {
 		const apiResponse = new ApiResponse(
 			{

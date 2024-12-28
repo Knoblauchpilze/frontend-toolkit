@@ -1,6 +1,7 @@
+// https://www.typescriptlang.org/docs/handbook/enums.html#string-enums
 export enum Status {
-	SUCCESS,
-	ERROR
+	SUCCESS = 'SUCCESS',
+	ERROR = 'ERROR'
 }
 
 export class ApiResponse {

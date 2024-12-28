@@ -68,6 +68,7 @@ function tryGetFailureReasonFromString(errorDetails: string): ApiFailure {
 			return ApiFailure.INVALID_CREDENTIALS;
 		case 'Invalid email':
 		case 'Invalid password':
+		case 'Email already in use':
 			return ApiFailure.INVALID_REGISTRATION_DATA;
 		default:
 			return ApiFailure.UNKNOWN_ERROR;

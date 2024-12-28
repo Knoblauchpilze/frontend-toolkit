@@ -14,6 +14,7 @@ export { default as HeroContainer } from '$lib/components/layout/HeroContainer.s
 export { default as FormField } from '$lib/components/FormField.svelte';
 
 // Methods and types
+export { HttpStatus } from '$lib/http/httpStatusCode.js';
 export { ApiResponse, Status } from '$lib/http/apiResponse.js';
 export { ApiFailure, tryGetFailureReason } from '$lib/http/apiResponseAnalyzer.js';
 export {

@@ -7,7 +7,7 @@ export enum ApiFailure {
 	BAD_REQUEST = 10,
 	NOT_FOUND = 11,
 
-	SERVICE_UNAVAILAVLE = 20,
+	SERVICE_UNAVAILABLE = 20,
 
 	NOT_AUTHENTICATED = 50,
 	API_KEY_EXPIRED = 51,
@@ -59,7 +59,7 @@ export function tryGetFailureReason(apiResponse: ApiResponse): ApiFailure {
 function tryGetFailureReasonFromString(errorDetails: string): ApiFailure {
 	switch (errorDetails) {
 		case 'fetch failed':
-			return ApiFailure.SERVICE_UNAVAILAVLE;
+			return ApiFailure.SERVICE_UNAVAILABLE;
 		case 'Invalid id syntax':
 			return ApiFailure.BAD_REQUEST;
 		case 'No such user':

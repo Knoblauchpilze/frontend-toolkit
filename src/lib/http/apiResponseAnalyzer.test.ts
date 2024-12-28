@@ -221,6 +221,6 @@ describe('Getting failure reason', () => {
 		);
 
 		const actual = tryGetFailureReason(apiResponse);
-		expect(actual).toBe(ApiFailure.SERVICE_UNAVAILAVLE);
+		expect(actual).toBe(ApiFailure.SERVICE_UNAVAILABLE);
 	});
 });

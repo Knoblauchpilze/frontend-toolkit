@@ -7,8 +7,10 @@ This package aims at providing building blocks that help to kickstart a svelte-k
 It also defines convenience components allowing to style the various websites in a consistent way.
 
 The content of this repository uses several existing web frameworks:
-* [svelte]() as a base for the components.
-* [tailwindcss]() for styling.
+* [svelte](https://svelte.dev) as a base for the components.
+* [tailwindcss](https://tailwindcss.com) for styling.
+
+https://www.npmjs.com/
 
 TODO: Create a template project for the frontend service and link it here.
 
@@ -41,7 +43,7 @@ A typical example is given below:
 const test = 1;
 ```
 
-Most components also rely on the [tailwindcss]() library for styling. In order for the styling to be correctly recognized and applied you need to slightly modify your tailwindcss config to also generate the `css` classes for the components defined in this package.
+Most components also rely on the [tailwindcss](https://tailwindcss.com) library for styling. In order for the styling to be correctly recognized and applied you need to slightly modify your tailwindcss config to also generate the `css` classes for the components defined in this package.
 
 This can be achieved by adding the following to the `tailwind.config.json` file.
 

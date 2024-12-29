@@ -41,9 +41,19 @@ A typical example is given below:
 const test = 1;
 ```
 
-Most components also rely on the [tailwindcss](https://tailwindcss.com) library for styling. In order for the styling to be correctly recognized and applied you need to slightly modify your tailwindcss config to also generate the `css` classes for the components defined in this package.
+Most components also rely on the [tailwindcss](https://tailwindcss.com) library for styling.
 
-This can be achieved by adding the following (second line) to the `tailwind.config.json` file.
+## Tailwind styling in npm package
+
+When publishing the `svelte` components to a package, the styling information provided by tailwind needs to be propagated to the build system of the calling code. This seems to be a typical question of people working on tailwind components in a package.
+
+To solve this problem, [this page](https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries) in the documentation of tailwind gives a solution:
+
+![Tailwind setup in a project using the package](resources/tailwind-setup.png)
+
+By modifying `tailwind.config.js`, we guarantee that tailwind will also process the components coming from the library and not only the ones defined in the project.
+
+Below is the same code as in the image above but with copyable text:
 
 ```json
 {
@@ -175,13 +185,3 @@ Depending on the choice between `SvelteKit minimal ` and `Svelte library` the ro
 The problem seems to be that in case of a library this missing `"display: contents"` seems to prevent layout to be correctly computed in case of `height: 100%`. This is explained in a bit more details in issue [#7585](https://github.com/sveltejs/kit/discussions/7585) in the `sveltejs` project.
 
 In order to properly test this package we added it. ⚠️ **Don't forget to add it as well in case you want to do some testing within the package repository** ⚠️
-
-## Tailwind styling in npm package
-
-When publishing the `svelte` components to a package, the styling information provided by tailwind needs to be propagated to the build system of the calling code. This seems to be a typical question of people working on tailwind components in a package.
-
-To solve this problem, [this page](https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries) in the documentation of tailwind gives a solution:
-
-![Tailwind setup in a project using the package](resources/tailwind-setup.png)
-
-By doing this we guarantee that tailwind will also process the components coming from the library and not only the ones defined in the project.

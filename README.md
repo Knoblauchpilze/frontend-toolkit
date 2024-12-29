@@ -37,8 +37,17 @@ The [components](src/lib/components) are visual elements meant to be visually re
 A typical example is given below:
 
 ```js
-// TODO: Replace this
-const test = 1;
+<script lang="ts">
+	interface Props {
+		text?: string;
+		textColor?: string;
+		styling?: string;
+	}
+
+	let { text = 'Missing text', textColor = 'text-secondary', styling = '' }: Props = $props();
+</script>
+
+<p class="{textColor} {styling}">{text}</p>
 ```
 
 Most components also rely on the [tailwindcss](https://tailwindcss.com) library for styling.
@@ -67,6 +76,36 @@ Below is the same code as in the image above but with copyable text:
 This will instruct the tailwind processor to also look for directives in this package's files.
 
 Alternatively you can also use the [template-frontend](https://github.com/Knoblauchpilze/template-frontend) repository to kick-start a new frontend project: it will be configured automatically to use this package in a correct way.
+
+## Style for the application
+
+As described in the [components](#components) section, most components are using tailwind to define colours and styles.
+
+In order to keep a common theme on the webpages, this package leverages the concept of a color theme: it means that instead of providing real colour values for the various components we rather use e.g. `bg-primary` or `text-secondary`. 
+
+With this approach we allow to easily reuse the components in various projects where the color theme might be different.
+
+We recommend adding the following section to your `tailwind.config.json`:
+
+```json
+{
+    "theme": {
+        "extend": {
+            "colors": {
+                "primary": "#000",
+				            "primary-hover": "#222",
+				            "primary-selected": "#444",
+				            "secondary": "#fff",
+				            "secondary-hover": "#fff",
+				            "error": "#d92d0f",
+				            "overlay": "#0b0b45"
+            }
+        }
+    }
+}
+```
+
+Alternatively, you can start from the template provided in [template-frontend](https://github.com/Knoblauchpilze/template-frontend).
 
 ## API interoperability
 

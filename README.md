@@ -10,8 +10,6 @@ The content of this repository uses several existing web frameworks:
 * [svelte](https://svelte.dev) as a base for the components.
 * [tailwindcss](https://tailwindcss.com) for styling.
 
-https://www.npmjs.com/
-
 TODO: Create a template project for the frontend service and link it here.
 
 # Badges
@@ -117,7 +115,7 @@ This should open your default browser with a page showing the demo app.
 
 ## Publishing a new release
 
-In order to make changes available to be used in other projects, we use [npmjs]() to host the production version of this package.
+In order to make changes available to be used in other projects, we use [npmjs](https://www.npmjs.com) to host the production version of this package.
 
 You can attempt to build the library locally with:
 ```bash

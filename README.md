@@ -50,11 +50,11 @@ This can be achieved by adding the following to the `tailwind.config.json` file.
 
 This will instruct the tailwind processor to also look for directives in this package's files.
 
-Alternatively you can also use the [frontend-template](https://github.com/Knoblauchpilze/frontend-template) repository to kick-start a new frontend project: it will be configured automatically to use this package in a correct way.
+Alternatively you can also use the [template-frontend](https://github.com/Knoblauchpilze/template-frontend) repository to kick-start a new frontend project: it will be configured automatically to use this package in a correct way.
 
 ## API interoperability
 
-We faced the issue to have a common structure to interact with services created using the [go-template](https://github.com/Knoblauchpilze/go-template) repository.
+We faced the issue to have a common structure to interact with services created using the [template-go](https://github.com/Knoblauchpilze/template-go) repository.
 
 In this repository we allow to easily create services producing responses in the following format:
 

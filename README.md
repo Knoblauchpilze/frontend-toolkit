@@ -137,7 +137,7 @@ npm run package
 Creating a new release is then done with the dedicated script in this repository (see [publish.sh](scripts/publish.sh)) using (from the root of this repository):
 
 ```bash
-./scripts/publish-release.sh
+./scripts/publish.sh
 ```
 
 If you don't specify any additional parameters the script will fetch the latest publish version on this GitHub repository and increase the patch version by 1.

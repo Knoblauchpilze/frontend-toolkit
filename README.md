@@ -79,9 +79,9 @@ Alternatively you can also use the [template-frontend](https://github.com/Knobla
 
 ## Style for the application
 
-As described in the [components](#components) section, most components are using tailwind to define colours and styles.
+As described in the [components](#components) section, most components are using tailwind to define colors and styles.
 
-In order to keep a common theme on the webpages, this package leverages the concept of a color theme: it means that instead of providing real colour values for the various components we rather use e.g. `bg-primary` or `text-secondary`. 
+In order to keep a common theme on the webpages, this package leverages the concept of a color theme: it means that instead of providing real color values for the various components we rather use e.g. `bg-primary` or `text-secondary`. 
 
 With this approach we allow to easily reuse the components in various projects where the color theme might be different.
 
@@ -93,17 +93,19 @@ We recommend adding the following section to your `tailwind.config.json`:
         "extend": {
             "colors": {
                 "primary": "#000",
-				            "primary-hover": "#222",
-				            "primary-selected": "#444",
-				            "secondary": "#fff",
-				            "secondary-hover": "#fff",
-				            "error": "#d92d0f",
-				            "overlay": "#0b0b45"
+                "primary-hover": "#222",
+                "primary-selected": "#444",
+                "secondary": "#fff",
+                "secondary-hover": "#fff",
+                "error": "#d92d0f",
+                "overlay": "#0b0b45"
             }
         }
     }
 }
 ```
+
+The exact values for the theme's colors can be adapted to the style you want for your website.
 
 Alternatively, you can start from the template provided in [template-frontend](https://github.com/Knoblauchpilze/template-frontend).
 

@@ -6,7 +6,11 @@ This package aims at providing building blocks that help to kickstart a svelte-k
 
 It also defines convenience components allowing to style the various websites in a consistent way.
 
-TODO: Create a template project for the frontend service.
+The content of this repository uses several existing web frameworks:
+* [svelte]() as a base for the components.
+* [tailwindcss]() for styling.
+
+TODO: Create a template project for the frontend service and link it here.
 
 # Badges
 
@@ -24,19 +28,107 @@ Taken from the svelte documentation:
 Everything inside src/lib is part of your library, everything inside src/routes can be used as a showcase or preview app.
 ```
 
+The [src/lib](src/lib) defines the content of the package. It consists of two main categories of elements, described in a bit more details in the two following sections.
+
+## Components
+
+The [components](src/lib/components) are visual elements meant to be visually represented in web pages. They are all designed to be integrated in a svelte app and provide some basic building blocks to represent text, links and other such elements in a consistent way.
+
+A typical example is given below:
+
+```js
+// TODO: Replace this
+const test = 1;
+```
+
+Most components also rely on the [tailwindcss]() library for styling. In order for the styling to be correctly recognized and applied you need to slightly modify your tailwindcss config to also generate the `css` classes for the components defined in this package.
+
+This can be achieved by adding the following to the `tailwind.config.json` file.
+
+```json
+```
+
+This will instruct the tailwind processor to also look for directives in this package's files.
+
+Alternatively you can also use the [frontend-template](https://github.com/Knoblauchpilze/frontend-template) repository to kick-start a new frontend project: it will be configured automatically to use this package in a correct way.
+
+## API interoperability
+
+We faced the issue to have a common structure to interact with services created using the [go-template](https://github.com/Knoblauchpilze/go-template) repository.
+
+In this repository we allow to easily create services producing responses in the following format:
+
+```json
+{
+    "requestId": "",
+    "status": "SUCCESS",
+    "details": [
+        "value1",
+        "value2"
+    ]
+}
+```
+
+The process of analyzing the API responses and extracting either the failure reason or the useful data is always the same for a frontend interacting with such a service. Therefore, it makes sense to extract it as a utility toolkit.
+
+In this package we define:
+* [ApiResponse](src/lib/http/apiResponse.ts) as the building block of a response as returned by a backend service.
+* some way to analyze the failure in case a response is not successful through `tryGetFailureReason`.
+* a convenience set of methods to extract data from the response with `parseApiResponseAsSingleValue` (and it's array equivalent).
+
+As the goal is to make this process safe and easily reusable, we put some effort into testing the solution properly.
+
+The hope is that further efforts to fix bugs or integrating new features can be made easily available to all front-end services through the use of this package.
+
 # How to get started?
 
-To build the library:
+## Use the package in one of your project 
 
+You can add this package as a dependency of your project. As for any `svelte` components, it should not be necessary to add the `svelte` framework as a production dependency, only a development one.
+
+In general, you should be able to add this package by modifying your `package.json` as shown below:
+
+```json
+// TODO: Change this
+```
+
+## Extend the library 
+
+Some components are needed on your system to be able to add features or generally develop in this repository. Namely:
+* [npm](), available from . We used version 22 when developing this package.
+* [node](), available from . We used version XY during the development phase.
+
+Once this is done you can clone this repository with e.g.:
+
+```bash
+git clone 
+```
+
+From there you should be able to run the following commands in the root of the repository to start the demo app:
+
+```bash
+make install
+make dev
+```
+
+This should open your default browser with a page showing the demo app.
+
+## Publishing a new release
+
+In order to make changes available to be used in other projects, we use [npmjs]() to host the production version of this package.
+
+You can attempt to build the library locally with:
 ```bash
 npm run package
 ```
 
-To publish the package, you can run:
+Creating a new release is then done with the dedicated script in this repository (see [publish-release.sh](scripts/publish-release.sh)) using (from the root of this repository):
 
 ```bash
-npm publish
+./scripts/publish-release.sh
 ```
+
+If you don't specify any additional parameters the script will fetch the latest publish version on this GitHub repository and increase the patch version by 1.
 
 # Learnings and info
 

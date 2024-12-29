@@ -95,8 +95,10 @@ In general, you should be able to add this package by modifying your `package.js
 ## Extend the library 
 
 Some components are needed on your system to be able to add features or generally develop in this repository. Namely:
-* [npm](), available from . We used version 22 when developing this package.
-* [node](), available from . We used version XY during the development phase.
+* [node](https://nodejs.org/en/download). We used version 22 during the development phase.
+* `npm`. We used version TODO when developing this package.
+
+Alternatively, this [stack overflow post](https://stackoverflow.com/questions/69029896/how-do-you-install-npm-on-ubuntu) indicated how to install both from the package manager.
 
 Once this is done you can clone this repository with e.g.:
 

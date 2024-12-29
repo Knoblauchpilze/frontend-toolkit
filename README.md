@@ -47,7 +47,7 @@ This can be achieved by adding the following (second line) to the `tailwind.conf
 
 ```json
 {
-    content: [
+    "content": [
         "./src/**/*.{html,js,svelte,ts}",
         "./node_modules/@totocorpsoftwareinc/frontend-toolkit/**/*.svelte"
     ]

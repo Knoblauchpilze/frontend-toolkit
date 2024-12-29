@@ -10,7 +10,7 @@ The content of this repository uses several existing web frameworks:
 * [svelte](https://svelte.dev) as a base for the components.
 * [tailwindcss](https://tailwindcss.com) for styling.
 
-TODO: Create a template project for the frontend service and link it here.
+A companion template frontend project can be found over at [template-frontend](https://github.com/Knoblauchpilze/template-frontend): it is already configured to use this package and contains a minimalistic setup. You can learn more about it on the project's README.
 
 # Badges
 

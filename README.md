@@ -46,10 +46,12 @@ Most components also rely on the [tailwindcss](https://tailwindcss.com) library 
 This can be achieved by adding the following (second line) to the `tailwind.config.json` file.
 
 ```json
-content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/@totocorpsoftwareinc/frontend-toolkit/**/*.svelte'
-	],
+{
+    content: [
+        './src/**/*.{html,js,svelte,ts}',
+        './node_modules/@totocorpsoftwareinc/frontend-toolkit/**/*.svelte'
+    ]
+}
 ```
 
 This will instruct the tailwind processor to also look for directives in this package's files.
@@ -93,11 +95,11 @@ You can add this package as a dependency of your project. As for any `svelte` co
 In general, you should be able to add this package by modifying your `package.json` as shown below:
 
 ```json
-...
-"dependencies": {
-		"@totocorpsoftwareinc/frontend-toolkit": "^0.0.12"
-	},
-...
+{
+    "dependencies": {
+        "@totocorpsoftwareinc/frontend-toolkit": "^0.0.12"
+    }
+}
 ```
 
 ## Extend the library 

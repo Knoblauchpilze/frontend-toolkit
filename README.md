@@ -122,7 +122,7 @@ You can attempt to build the library locally with:
 npm run package
 ```
 
-Creating a new release is then done with the dedicated script in this repository (see [publish-release.sh](scripts/publish-release.sh)) using (from the root of this repository):
+Creating a new release is then done with the dedicated script in this repository (see [publish.sh](scripts/publish.sh)) using (from the root of this repository):
 
 ```bash
 ./scripts/publish-release.sh

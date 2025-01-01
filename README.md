@@ -52,6 +52,8 @@ A typical example is given below:
 
 Most components also rely on the [tailwindcss](https://tailwindcss.com) library for styling.
 
+When possible, components are designed to be easily configurable and adaptable. This mostly means that we extract for example (and quite obviously) the text displayed in a link but also for example the background color and whether to display the component as a button or a simple link. The goal is to make it possible to integrate it easily in various projects.
+
 ## Tailwind styling in npm package
 
 When publishing the `svelte` components to a package, the styling information provided by tailwind needs to be propagated to the build system of the calling code. This seems to be a typical question of people working on tailwind components in a package.

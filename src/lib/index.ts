@@ -17,6 +17,7 @@ export { default as FormField } from '$lib/components/FormField.svelte';
 export { HttpStatus } from '$lib/http/httpStatusCode.js';
 export { ApiResponse, Status } from '$lib/http/apiResponse.js';
 export { ApiFailure, tryGetFailureReason } from '$lib/http/apiResponseAnalyzer.js';
+export { getHttpStatusCodeFromApiFailure } from '$lib/http/apiFailureToHttpStatus.js';
 export {
 	parseApiResponseAsArray,
 	parseApiResponseAsSingleValue

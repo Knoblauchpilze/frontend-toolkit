@@ -4,6 +4,13 @@ import type { ApiResponse } from './apiResponse.js';
 // https://www.simonholywell.com/post/typescript-constructor-type/
 export type Constructor<T> = new (arg: object) => T;
 
+export function parseObjectAsSingleValue<T>(
+	data: object,
+	destinationType: Constructor<T>
+): T | undefined {
+	return new destinationType(data);
+}
+
 export function parseApiResponseAsSingleValue<T>(
 	response: ApiResponse,
 	destinationType: Constructor<T>
@@ -11,7 +18,15 @@ export function parseApiResponseAsSingleValue<T>(
 	if (response.isError()) {
 		return undefined;
 	}
-	return new destinationType(response.getDetails());
+	return parseObjectAsSingleValue(response.getDetails(), destinationType);
+}
+
+export function parseObjectAsArray<T>(data: object, destinationType: Constructor<T>): T[] {
+	if (!Array.isArray(data)) {
+		return [];
+	}
+
+	return data.map((obj) => new destinationType(obj));
 }
 
 export function parseApiResponseAsArray<T>(
@@ -23,9 +38,5 @@ export function parseApiResponseAsArray<T>(
 	}
 
 	const details = response.getDetails();
-	if (!Array.isArray(details)) {
-		return [];
-	}
-
-	return details.map((obj) => new destinationType(obj));
+	return parseObjectAsArray(details, destinationType);
 }

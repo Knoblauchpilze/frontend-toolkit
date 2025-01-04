@@ -19,7 +19,9 @@ export { ApiResponse, Status } from '$lib/http/apiResponse.js';
 export { ApiFailure, tryGetFailureReason } from '$lib/http/apiResponseAnalyzer.js';
 export { getHttpStatusCodeFromApiFailure } from '$lib/http/apiFailureToHttpStatus.js';
 export {
+	parseObjectAsArray,
 	parseApiResponseAsArray,
+	parseObjectAsSingleValue,
 	parseApiResponseAsSingleValue
 } from '$lib/http/apiResponseParser.js';
 export { safeFetchJson, trimTrailingSlash } from '$lib/http/fetch.js';

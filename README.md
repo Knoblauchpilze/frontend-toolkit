@@ -2,7 +2,7 @@
 
 # Why this package?
 
-This package aims at providing building blocks that help to kickstart a svelte-kit project able to interact with the backend services developed with [backend-toolkit](https://github.com/KnoblauchPilze/backend-toolkit).
+This package aims at providing building blocks that help to kickstart a svelte-kit project able to interact with the backend services developed with [backend-toolkit](https://github.com/Knoblauchpilze/backend-toolkit).
 
 It also defines convenience components allowing to style the various websites in a consistent way.
 

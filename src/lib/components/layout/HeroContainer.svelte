@@ -8,6 +8,7 @@
 		width?: string;
 		height?: string;
 		bgColor?: string;
+		align?: string;
 		bgOverlay?: string;
 		children?: Snippet;
 	}
@@ -17,6 +18,7 @@
 		height = 'h-3/4',
 		bgColor = 'bg-primary',
 		bgOverlay = 'bg-overlay',
+		align = 'center',
 		children
 	}: Props = $props();
 
@@ -30,7 +32,7 @@
 </script>
 
 <div class="relative h-full {bgColor} bg-cover bg-center bg-no-repeat">
-	<FlexContainer bgColor={bgOverlay} styling={style}>
+	<FlexContainer bgColor={bgOverlay} align={align} styling={style}>
 		{@render children?.()}
 	</FlexContainer>
 </div>

@@ -32,7 +32,7 @@
 </script>
 
 <div class="relative h-full {bgColor} bg-cover bg-center bg-no-repeat">
-	<FlexContainer bgColor={bgOverlay} align={align} styling={style}>
+	<FlexContainer bgColor={bgOverlay} {align} styling={style}>
 		{@render children?.()}
 	</FlexContainer>
 </div>

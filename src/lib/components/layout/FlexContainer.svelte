@@ -30,6 +30,8 @@
 				return 'justify-start';
 			case 'between':
 				return 'justify-between';
+			case 'end':
+				return 'justify-end';
 			default:
 				return 'justify-evenly';
 		}
@@ -41,6 +43,8 @@
 				return 'items-start';
 			case 'stretch':
 				return 'items-stretch';
+			case 'end':
+				return 'items-end';
 			default:
 				return 'items-center';
 		}

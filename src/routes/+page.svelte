@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FlexContainer, StyledLink, StyledTitle } from '$lib/index.js';
+	import { FlexContainer, FormField, StyledButton, StyledLink, StyledTitle } from '$lib/index.js';
 </script>
 
 <FlexContainer>
@@ -10,4 +10,27 @@
 		showAsButton={true}
 	/>
 	<StyledLink text="Admin dashboard" link="https://admin.gasteropo.de" showAsButton={true} />
+
+	<form method="POST" action="?/login" class="flex flex-1 flex-col justify-evenly">
+		<FormField label="email:" labelId="email" labelStyling={'text-secondary'}>
+			<input
+				id="email"
+				type="text"
+				name="email"
+				placeholder="Enter your email address"
+				required
+				value={''}
+			/>
+		</FormField>
+		<FormField label="password:" labelId="password" labelStyling={'text-secondary'}>
+			<input
+				id="password"
+				type="text"
+				name="password"
+				placeholder="Enter your password"
+				required
+			/></FormField
+		>
+		<StyledButton text="Login" />
+	</form>
 </FlexContainer>

@@ -15,4 +15,5 @@ build:
 	npm run build
 
 lint:
-	npx prettier . --write
+	npm run format
+	npm run lint

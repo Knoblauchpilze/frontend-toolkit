@@ -14,13 +14,13 @@
 <!-- https://tailwindcss.com/docs/hover-focus-and-other-states -->
 {#if showAsButton}
 	{#if disabled}
-		<a href={link} class="rounded-[8px] bg-primary-selected px-12 py-4 text-secondary">
+		<a href={link} class="bg-primary-selected text-secondary rounded-[8px] px-12 py-4">
 			{text}
 		</a>
 	{:else}
 		<a
 			href={link}
-			class="rounded-[8px] bg-primary px-12 py-4 text-secondary hover:bg-primary-hover"
+			class="bg-primary text-secondary hover:bg-primary-hover rounded-[8px] px-12 py-4"
 		>
 			{text}
 		</a>

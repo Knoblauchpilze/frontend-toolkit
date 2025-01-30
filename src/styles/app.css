@@ -1,3 +1,11 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@theme {
+	--color-primary: #000;
+	--color-primary-hover: #222;
+	--color-primary-selected: #444;
+	--color-secondary: #fff;
+	--color-secondary-hover: #fff;
+	--color-error: #d92d0f;
+	--color-overlay: #0b0b45;
+}

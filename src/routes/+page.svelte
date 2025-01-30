@@ -20,6 +20,7 @@
 				placeholder="Enter your email address"
 				required
 				value={''}
+				class="bg-white"
 			/>
 		</FormField>
 		<FormField label="password:" labelId="password" labelStyling={'text-secondary'}>
@@ -29,6 +30,7 @@
 				name="password"
 				placeholder="Enter your password"
 				required
+				class="bg-white"
 			/></FormField
 		>
 		<StyledButton text="Login" />

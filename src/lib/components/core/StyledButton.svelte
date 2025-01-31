@@ -3,9 +3,10 @@
 		text?: string;
 		enabled?: boolean;
 		border?: boolean;
+		onClick?: () => void;
 	}
 
-	let { text = 'Click me', enabled = true, border = false }: Props = $props();
+	let { text = 'Click me', enabled = true, border = false, onClick }: Props = $props();
 
 	let borderStyle = $state('');
 	if (border === true) {
@@ -15,8 +16,12 @@
 </script>
 
 {#if enabled}
-	<button class="bg-primary text-secondary hover:bg-primary-hover {borderStyle}">{text}</button>
+	<button class="bg-primary text-secondary hover:bg-primary-hover {borderStyle}" onclick={onClick}
+		>{text}</button
+	>
 {:else}
 	<!-- https://stackoverflow.com/questions/34684467/dont-redirect-on-button-click-with-css -->
-	<button disabled class="bg-primary-selected text-secondary {borderStyle}">{text}</button>
+	<button disabled class="bg-primary-selected text-secondary {borderStyle}" onclick={onClick}
+		>{text}</button
+	>
 {/if}

@@ -37,7 +37,7 @@
 	</FlexContainer>
 </div>
 
-<style lang="postcss">
+<style lang="css">
 	/* https://stackoverflow.com/questions/19026884/flexbox-center-horizontally-and-vertically */
 	/* https://stackoverflow.com/questions/71760177/styling-the-body-element-in-svelte */
 	:global(body),

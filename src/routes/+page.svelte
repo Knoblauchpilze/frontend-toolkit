@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { FlexContainer, FormField, StyledButton, StyledLink, StyledTitle } from '$lib/index.js';
+
+	function onClickInternal() {
+		console.log('click');
+	}
 </script>
 
 <FlexContainer>
@@ -33,6 +37,6 @@
 				class="bg-white"
 			/></FormField
 		>
-		<StyledButton text="Login" />
+		<StyledButton text="Login" border={true} onClick={onClickInternal} />
 	</form>
 </FlexContainer>

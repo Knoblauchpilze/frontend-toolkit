@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{'test page'}</title>
+	<title>test page</title>
 </svelte:head>
 <HeroContainer>
 	{@render children?.()}

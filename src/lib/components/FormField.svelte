@@ -13,7 +13,7 @@
 	let { label = 'My label', labelId, labelStyling = 'text-primary', children }: Props = $props();
 </script>
 
-<FlexContainer extensible={false} align={'stretch'} styling={'text-primary'}>
+<FlexContainer extensible={false} align="stretch" styling="text-primary">
 	<label for={labelId} class={labelStyling}>{label}</label>
 	{@render children?.()}
 </FlexContainer>

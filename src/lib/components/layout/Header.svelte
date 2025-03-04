@@ -13,7 +13,7 @@
 
 <FlexContainer
 	vertical={false}
-	bgColor={'bg-black'}
+	bgColor="bg-black"
 	styling="w-full {height} fixed top-0 left-0 text-white"
 >
 	{@render children?.()}

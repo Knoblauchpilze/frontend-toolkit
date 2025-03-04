@@ -16,18 +16,18 @@
 	<StyledLink text="Admin dashboard" link="https://admin.gasteropo.de" showAsButton={true} />
 
 	<form method="POST" action="?/login" class="flex flex-1 flex-col justify-evenly">
-		<FormField label="email:" labelId="email" labelStyling={'text-secondary'}>
+		<FormField label="email:" labelId="email" labelStyling="text-secondary">
 			<input
 				id="email"
 				type="text"
 				name="email"
 				placeholder="Enter your email address"
 				required
-				value={''}
+				value=""
 				class="bg-white"
 			/>
 		</FormField>
-		<FormField label="password:" labelId="password" labelStyling={'text-secondary'}>
+		<FormField label="password:" labelId="password" labelStyling="text-secondary">
 			<input
 				id="password"
 				type="text"

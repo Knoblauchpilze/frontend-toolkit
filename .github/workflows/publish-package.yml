@@ -31,7 +31,7 @@ jobs:
         # https://stackoverflow.com/questions/58177786/get-the-current-pushed-tag-in-github-actions
         # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#github-context
         run: |
-          sed -Ei 's/"version":[ ]+"[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?"/"version": "'${{ steps.package-version.tag }}'"/g' package.json
+          sed -Ei 's/"version":[ ]+"[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?"/"version": "'${{ steps.package-version.outputs.tag }}'"/g' package.json
           echo $(cat package.json)
       - name: Publish package
         run: npm publish --provenance --access public
@@ -49,7 +49,7 @@ jobs:
           git commit -am "infra: Bumped package version to ${{ github.ref_name }}"
           git push
           gh pr create \
-            -H feature/bump-package-version-to-${{ steps.package-version.tag }} \
+            -H feature/bump-package-version-to-${{ steps.package-version.outputs.tag }} \
             -B master \
             -t "infra: Bumped package version to ${{ github.ref_name }}" \
             -b "Automated PR to bump package version"

@@ -47,7 +47,7 @@ jobs:
           git config --global user.email 'totocorpbot@users.noreply.github.com'
           git checkout -b feature/bump-package-version-to-${{ steps.package-version.tag }}
           git commit -am "infra: Bumped package version to ${{ github.ref_name }}"
-          git push
+          git push origin feature/bump-package-version-to-${{ steps.package-version.tag }}
           gh pr create \
             -H feature/bump-package-version-to-${{ steps.package-version.outputs.tag }} \
             -B master \

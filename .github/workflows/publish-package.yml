@@ -17,7 +17,7 @@ jobs:
         run: echo "tag=$(echo ${{ github.ref_name }} | tr -d v)" >> $GITHUB_OUTPUT
 
   publish-package:
-    needs: [extract-package-tag]
+    needs: [extract-package-version]
     runs-on: ubuntu-latest
     permissions:
       contents: write

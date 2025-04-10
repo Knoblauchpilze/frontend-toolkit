@@ -45,14 +45,14 @@ jobs:
           git pull
           git config --global user.name 'totocorpbot'
           git config --global user.email 'totocorpbot@users.noreply.github.com'
-          git checkout -b feature/bump-package-version-to-${{ steps.package-version.outputs.tag }}
+          git checkout -b chore/bump-package-version-to-${{ steps.package-version.outputs.tag }}
           git commit -am "infra: Bumped package version to ${{ github.ref_name }}"
-          git push origin feature/bump-package-version-to-${{ steps.package-version.outputs.tag }}
+          git push origin chore/bump-package-version-to-${{ steps.package-version.outputs.tag }}
           gh pr create \
-            -H feature/bump-package-version-to-${{ steps.package-version.outputs.tag }} \
+            -H chore/bump-package-version-to-${{ steps.package-version.outputs.tag }} \
             -B master \
             -t "infra: Bumped package version to ${{ github.ref_name }}" \
-            -b "Automated PR to bump package version"
+            -b "Automated PR to bump package version to ${{ github.ref_name }}"
           gh pr merge --squash --auto
         env:
           GH_TOKEN: ${{ secrets.PUBLISH_PR_CREATION_TOKEN }}

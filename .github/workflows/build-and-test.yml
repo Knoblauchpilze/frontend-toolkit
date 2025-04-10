@@ -12,6 +12,10 @@ on:
       - 'src/lib/**'
       - '*.js'
       - '*config*'
+  pull_request:
+    # https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#example-including-branches
+    branches:
+      - chore/bump-package-version-to-**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}

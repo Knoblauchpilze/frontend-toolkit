@@ -54,3 +54,5 @@ jobs:
             -t "infra: Bumped package version to ${{ github.ref_name }}" \
             -b "Automated PR to bump package version"
           gh pr merge --squash --auto
+        env:
+          GH_TOKEN: ${{ secrets.PUBLISH_PR_CREATION_TOKEN }}

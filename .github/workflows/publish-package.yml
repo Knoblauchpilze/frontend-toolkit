@@ -61,10 +61,12 @@ jobs:
         # https://stackoverflow.com/questions/68057744/create-pull-request-with-github-action
         # https://cli.github.com/manual/gh_pr_create
         # https://cli.github.com/manual/gh_pr_merge
+        # https://github.com/orgs/community/discussions/26580#discussioncomment-5512045
         run: |
-          git pull
           git config --global user.name 'totocorpbot'
           git config --global user.email 'totocorpbot@users.noreply.github.com'
+          git config --global url.https://${{ secrets.PUBLISH_PR_CREATION_TOKEN }}@github.com/.insteadOf https://github.com/
+          git pull
           git checkout -b chore/bump-package-version-to-${{ needs.extract-package-version.outputs.version }}
           git commit -am "infra: Bumped package version to ${{ github.ref_name }}"
           git push origin chore/bump-package-version-to-${{ needs.extract-package-version.outputs.version }}

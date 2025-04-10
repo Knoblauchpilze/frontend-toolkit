@@ -45,7 +45,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
   update-package-version:
-    needs: [publish-package]
+    needs: [extract-package-version, publish-package]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

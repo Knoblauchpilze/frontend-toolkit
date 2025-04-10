@@ -53,6 +53,10 @@ jobs:
           ref: master
           # https://github.com/orgs/community/discussions/26220#discussioncomment-3250853
           persist-credentials: false
+      - name: Bump version
+        run: |
+          sed -Ei 's/"version":[ ]+"[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?"/"version": "'${{ needs.extract-package-version.outputs.version }}'"/g' package.json
+          echo $(cat package.json)
       - name: Publish version change
         # https://stackoverflow.com/questions/68057744/create-pull-request-with-github-action
         # https://cli.github.com/manual/gh_pr_create

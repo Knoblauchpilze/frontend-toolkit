@@ -45,6 +45,10 @@ export class ApiResponse {
 		return this.httpCode >= 500 && this.httpCode < 600;
 	}
 
+	public statusCode(): number {
+		return this.httpCode;
+	}
+
 	public getDetails(): object {
 		return this.details;
 	}

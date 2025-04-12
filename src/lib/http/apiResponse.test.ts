@@ -14,7 +14,7 @@ const SAMPLE_RESPONSE_DETAILS = {
 	details: {}
 };
 
-describe('Creating an ApiResponse', () => {
+describe.concurrent('Creating an ApiResponse', () => {
 	it('should use the provided request identifier', () => {
 		const actual = new ApiResponse(
 			{
@@ -116,9 +116,20 @@ describe('Creating an ApiResponse', () => {
 		expect(actual.is4xxBadRequest()).toBe(false);
 		expect(actual.is5xxError()).toBe(true);
 	});
+
+	it('should correctly use the provided HTTP status code', () => {
+		let actual = new ApiResponse(SAMPLE_RESPONSE_DETAILS, HttpStatus.INTERNAL_SERVER_ERROR);
+		expect(actual.statusCode()).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		actual = new ApiResponse(SAMPLE_RESPONSE_DETAILS, HttpStatus.OK);
+		expect(actual.statusCode()).toBe(HttpStatus.OK);
+
+		actual = new ApiResponse(SAMPLE_RESPONSE_DETAILS, HttpStatus.CONFLICT);
+		expect(actual.statusCode()).toBe(HttpStatus.CONFLICT);
+	});
 });
 
-describe('Creating a failed ApiResponse', () => {
+describe.concurrent('Creating a failed ApiResponse', () => {
 	it('should have ERROR status', () => {
 		const actual = createFailedApiResponse({}, HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -170,7 +181,7 @@ describe('Creating a failed ApiResponse', () => {
 	});
 });
 
-describe('Creating an empty success ApiResponse', () => {
+describe.concurrent('Creating an empty success ApiResponse', () => {
 	it('should have SUCCESS status', () => {
 		const actual = createEmptySuccessApiResponse(HttpStatus.NO_CONTENT);
 

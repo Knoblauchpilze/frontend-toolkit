@@ -87,23 +87,21 @@ In order to keep a common theme on the webpages, this package leverages the conc
 
 With this approach we allow to easily reuse the components in various projects where the color theme might be different.
 
-We recommend adding the following section to your `tailwind.config.json`:
+We recommend adding the following section to your main css file (typically stored at `src/styles/app.css`):
 
-```json
-{
-    "theme": {
-        "extend": {
-            "colors": {
-                "primary": "#000",
-                "primary-hover": "#222",
-                "primary-selected": "#444",
-                "secondary": "#fff",
-                "secondary-hover": "#fff",
-                "error": "#d92d0f",
-                "overlay": "#0b0b45"
-            }
-        }
-    }
+```css
+@theme {
+	--color-primary: #263037;
+	--color-primary-hover: #36454f;
+	--color-primary-selected: #535a5e;
+	--color-secondary: #b87333;
+	--color-secondary-hover: #fff;
+	--color-enabled: #2a7a0c;
+	--color-enabled-hover: #45d90f;
+	--color-disabled: #751c0d;
+	--color-disabled-hover: #d92d0f;
+	--color-error: #d92d0f;
+	--color-overlay: #0005;
 }
 ```
 

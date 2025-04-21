@@ -3,9 +3,10 @@
 		text?: string;
 		textSize?: string;
 		margins?: boolean;
+		styling?: string;
 	}
 
-	let { text = 'Home', textSize = 'text-3xl', margins = true }: Props = $props();
+	let { text = 'Home', textSize = 'text-3xl', margins = true, styling = '' }: Props = $props();
 
 	let marginsStyle = $state('');
 	if (margins === true) {
@@ -13,4 +14,4 @@
 	}
 </script>
 
-<h1 class="text-secondary font-bold italic {textSize} {marginsStyle}">{text}</h1>
+<h1 class="text-secondary font-bold italic {textSize} {marginsStyle} {styling}">{text}</h1>

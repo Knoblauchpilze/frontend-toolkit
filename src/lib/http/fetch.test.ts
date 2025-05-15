@@ -116,4 +116,14 @@ describe('Safe fetch JSON', () => {
 		expect(actual.isSuccess()).toBe(true);
 		expect(actual.getDetails()).toEqual({});
 	});
+
+	it('should not return any data when HTTP status is 202 accepted', async () => {
+		fetchMock.mockGlobal().route('http://example.com/route/6', HttpStatus.ACCEPTED);
+
+		const actual = await safeFetchJson('http://example.com/route/6');
+
+		expect(actual.is2xxOk()).toBe(true);
+		expect(actual.isSuccess()).toBe(true);
+		expect(actual.getDetails()).toEqual({});
+	});
 });

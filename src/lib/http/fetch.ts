@@ -26,7 +26,7 @@ function buildApiResponseFromFailedHttpRequest(error: object): ApiResponse {
 }
 
 async function buildApiResponseFromHttpRequest(httpResponse: Response): Promise<ApiResponse> {
-	if (httpResponse.status == HttpStatus.NO_CONTENT) {
+	if (httpResponse.status == HttpStatus.NO_CONTENT || httpResponse.status == HttpStatus.ACCEPTED) {
 		return createEmptySuccessApiResponse(httpResponse.status);
 	}
 

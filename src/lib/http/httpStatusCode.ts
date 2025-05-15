@@ -1,5 +1,6 @@
 export enum HttpStatus {
 	OK = 200,
+	ACCEPTED = 202,
 	NO_CONTENT = 204,
 	SEE_OTHER = 303,
 	BAD_REQUEST = 400,

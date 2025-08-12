@@ -11,7 +11,7 @@ jobs:
     outputs:
       version: ${{ steps.package-version.outputs.tag }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Extract git commit hash
         id: package-version
         run: echo "tag=$(echo ${{ github.ref_name }} | tr -d v)" >> $GITHUB_OUTPUT
@@ -23,7 +23,7 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: master
       - name: Setup node environment
@@ -48,7 +48,7 @@ jobs:
     needs: [extract-package-version, publish-package]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: master
           # https://github.com/orgs/community/discussions/26220#discussioncomment-3250853

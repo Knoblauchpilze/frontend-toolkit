@@ -49,7 +49,7 @@
 		"@vitest/coverage-v8": "^4.0.4",
 		"eslint": "^9.38.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.11.0",
+		"eslint-plugin-svelte": "^3.12.5",
 		"fetch-mock": "^12.5.5",
 		"globals": "^16.4.0",
 		"prettier": "^3.6.2",

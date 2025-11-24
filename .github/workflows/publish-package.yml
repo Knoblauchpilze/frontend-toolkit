@@ -31,6 +31,9 @@ jobs:
         with:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
+      - name: Install npm
+        # https://docs.npmjs.com/trusted-publishers
+        run: npm install -g npm@latest
       - name: Install modules
         run: npm ci
       - name: Bump version

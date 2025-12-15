@@ -53,7 +53,7 @@
 		"fetch-mock": "^12.6.0",
 		"globals": "^16.5.0",
 		"prettier": "^3.7.4",
-		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-svelte": "^3.4.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"publint": "^0.3.15",
 		"svelte": "^5.46.0",

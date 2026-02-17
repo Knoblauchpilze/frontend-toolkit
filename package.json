@@ -65,6 +65,7 @@
 		"vitest": "^4.0.4"
 	},
 	"dependencies": {
+		"@eslint/js": "^10.0.1",
 		"@tailwindcss/vite": "^4.1.18"
 	}
 }

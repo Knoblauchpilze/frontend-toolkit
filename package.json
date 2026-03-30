@@ -62,7 +62,7 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.57.2",
 		"vite": "^8.0.2",
-		"vitest": "^4.0.4"
+		"vitest": "^4.1.2"
 	},
 	"dependencies": {
 		"@eslint/js": "^10.0.1",

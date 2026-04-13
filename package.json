@@ -41,7 +41,7 @@
 		"svelte": "^5.55.1"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^2.0.4",
+		"@eslint/compat": "^2.0.5",
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "^2.56.1",
 		"@sveltejs/package": "^2.5.7",

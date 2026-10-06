@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { type Snippet } from 'svelte';
 
-	import { FlexContainer } from '$lib/index.js';
+	import { FlexContainer } from '#lib/index.js';
 
 	interface Props {
 		height?: string;

@@ -42,10 +42,11 @@
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.1.1",
-		"@sveltejs/adapter-node": "^5.5.7",
+		"@sveltejs/adapter-node": "^6.0.0",
 		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/package": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@types/node": "^26.6.4",
 		"@vitest/coverage-v8": "^5.0.3",
 		"eslint": "^10.12.0",
 		"eslint-config-prettier": "^10.1.8",
@@ -67,5 +68,12 @@
 	"dependencies": {
 		"@eslint/js": "^10.0.1",
 		"@tailwindcss/vite": "^4.3.3"
+	},
+	"imports": {
+		"#lib/*": {
+			"types": "./src/lib/*.ts",
+			"default": "./src/lib/*"
+		},
+		"#styles/*": "./src/styles/*"
 	}
 }

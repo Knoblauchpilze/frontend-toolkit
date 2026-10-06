@@ -2,7 +2,7 @@
 	import { type Snippet } from 'svelte';
 
 	// https://svelte.dev/docs/kit/packaging#Caveats
-	import { FlexContainer } from '$lib/index.js';
+	import { FlexContainer } from '#lib/index.js';
 
 	interface Props {
 		width?: string;

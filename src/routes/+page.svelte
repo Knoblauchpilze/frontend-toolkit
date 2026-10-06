@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FlexContainer, FormField, StyledButton, StyledLink, StyledTitle } from '$lib/index.js';
+	import { FlexContainer, FormField, StyledButton, StyledLink, StyledTitle } from '#lib/index.js';
 
 	function onClickInternal() {
 		console.log('click');

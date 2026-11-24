@@ -25,13 +25,17 @@
 {#if enabled}
 	<button
 		class="bg-primary text-secondary hover:bg-primary-hover {borderStyle} {styling}"
-		onclick={onClick}>{text}</button
+		onclick={onClick}
 	>
+		{text}
+	</button>
 {:else}
 	<!-- https://stackoverflow.com/questions/34684467/dont-redirect-on-button-click-with-css -->
 	<button
 		disabled
 		class="bg-primary-selected text-secondary {borderStyle} {styling}"
-		onclick={onClick}>{text}</button
+		onclick={onClick}
 	>
+		{text}
+	</button>
 {/if}

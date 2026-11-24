@@ -17,7 +17,7 @@
 {#if enabled}
 	<button class="rounded-[8px] px-8 py-2 {bgColor} {bgColorHover} text-white">{text}</button>
 {:else}
-	<button class="rounded-[8px] px-8 py-2 {bgColor} {bgColorHover} text-white" disabled
-		>{text}</button
-	>
+	<button class="rounded-[8px] px-8 py-2 {bgColor} {bgColorHover} text-white" disabled>
+		{text}
+	</button>
 {/if}

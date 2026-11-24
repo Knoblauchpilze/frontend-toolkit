@@ -35,8 +35,8 @@
 				placeholder="Enter your password"
 				required
 				class="bg-white"
-			/></FormField
-		>
+			/>
+		</FormField>
 		<StyledButton text="Login" border={true} onClick={onClickInternal} />
 	</form>
 </FlexContainer>
